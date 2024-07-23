@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Experto de Diagnóstico Médico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema Experto de Diagnóstico Médico</h1>
+        <form method="POST">
+            <label><input type="checkbox" name="sintomas" value="fiebre"> Fiebre</label>
+            <label><input type="checkbox" name="sintomas" value="tos"> Tos</label>
+            <label><input type="checkbox" name="sintomas" value="dolor de cabeza"> Dolor de cabeza</label>
+            <label><input type="checkbox" name="sintomas" value="dolor muscular"> Dolor muscular</label>
+            <label><input type="checkbox" name="sintomas" value="rigidez en el cuello"> Rigidez en el cuello</label>
+            <label><input type="checkbox" name="sintomas" value="dolor abdominal"> Dolor abdominal</label>
+            <label><input type="checkbox" name="sintomas" value="náuseas"> Náuseas</label>
+            <label><input type="checkbox" name="sintomas" value="dificultad para respirar"> Dificultad para respirar</label>
+            <label><input type="checkbox" name="sintomas" value="dolor en el pecho"> Dolor en el pecho</label>
+            <label><input type="checkbox" name="sintomas" value="fatiga"> Fatiga</label>
+            <label><input type="checkbox" name="sintomas" value="pérdida de apetito"> Pérdida de apetito</label>
+            <label><input type="checkbox" name="sintomas" value="ictericia"> Ictericia</label>
+            <button type="submit">Diagnosticar</button>
+        </form>
+        {% if diagnostico %}
+        <div class="result">
+            <strong>Diagnóstico:</strong> {{ diagnostico }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
